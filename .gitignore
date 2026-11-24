@@ -1,0 +1,27 @@
+# 缓存音频
+.ktv_cache/
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.srt
+
+# AI模型
+.uvr5_models/
+
+# FFmpeg二进制（禁止上传）
+ffmpeg.exe
+ffplay.exe
+ffprobe.exe
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# IDE配置
+.idea/
+.vscode/

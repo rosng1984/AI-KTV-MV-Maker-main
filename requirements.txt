@@ -1,0 +1,7 @@
+# requirements.txt
+requests
+pycryptodome
+PyQt6
+pillow
+mutagen
+audio-separator[cpu]
