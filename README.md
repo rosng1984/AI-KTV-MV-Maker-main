@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ◦ 音频：mka(双音轨) / mp3 / m4a / wav / flac
 6. 📝 歌词：在线 LRC 获取、本地 LRC 导入、播放时滚动高亮歌词
 7. 🎛 播放器基础：进度拖动、音量调节、上一首 / 下一首、循环、封面展示
-￼
+ 
 📋 前置依赖（必须先装！）
 本程序不是 exe 单文件，是 Python 源码，运行前全部环境配置完成才能正常工作
 1. 安装 Python
@@ -49,22 +49,22 @@ pip install -r requirements.txt
 3. 安装 Python 依赖包
 打开 cmd，cd 到脚本目录，执行：
 bash
-￼
-￼
+ 
+ 
 pip install requests pycryptodome PyQt6 pillow mutagen audio-separator[cpu]
-￼
+ 
 提示：audio-separator[cpu] 体积很大，下载慢属于正常；如果你有 N 卡 CUDA，可以改成 audio-separator[gpu]
 4. UVR 分离模型配置（KTV 伴奏核心！）
 代码里配置项：
 python
-￼
-￼
-￼
-￼
+ 
+ 
+ 
+ 
 UVR_MODEL_DIR = r"F:\卡拉OK\AI-KTV-MV-Maker-main\.uvr5_models"
 DEFAULT_UVR_MODEL 
 = "UVR-MDX-NET-Inst_HQ_4.onnx"
-￼
+ 
 ✅ 使用步骤：
 1. 下载 UVR MDX 模型 UVR-MDX-NET-Inst_HQ_4.onnx
 2. 新建一个文件夹专门放 onnx/ckpt 模型
@@ -74,16 +74,16 @@ DEFAULT_UVR_MODEL
 • main.py（这份播放器源码，你保存为这个名字）
 • 模型文件放到上面配置的模型目录
 程序会自动生成缓存文件夹 .ktv_cache、cookies.json，不要手动删除，缓存加速下载
-￼
+ 
 🚀 启动程序
 cmd 进入脚本所在目录，运行：
 bash
-￼
-￼
+ 
+ 
 python main.py
-￼
+ 
 成功启动会弹出深色主题播放器窗口
-￼
+ 
 📖 用户使用说明书（给下载者看）
 一、界面分区说明
 1. 顶部搜索栏：搜歌曲名字 / 歌手，回车搜索；
@@ -132,7 +132,7 @@ python main.py
 • 取消任务：导出过程关闭软件，后台 FFmpeg/UVR 进程会自动终止
 • 缓存目录：脚本目录 .ktv_cache，临时音频、剪辑片段、字幕文件放这里，程序退出自动清理临时文件
 • 循环播放：左下角🔁按钮点击开启循环
-￼
+ 
 ❌ 常见报错 & 排错指南
 1. 启动直接报错 ModuleNotFoundError
 👉 原因：依赖包没装全；重新执行 pip 安装命令，看报错缺哪个包单独装
@@ -153,19 +153,19 @@ python main.py
 👉 自动匹配依赖 lrclib 接口，冷门歌曲匹配不到，手动准备 lrc 文件绑定
 8. 打包 Nuitka 打包提示 audio-separator/torch 异常
 audio-separator、torch 不适合打包，建议直接源码运行，不打包 exe
-￼
+ 
 ⚠️ 重要免责声明
 1. 本程序仅作为 Python 技术学习、FFmpeg 音视频、AI 伴奏分离技术演示，仅用于个人学习、自娱 K 歌
 2. 禁止用于商用、二次分发、售卖、批量爬取资源，尊重音乐版权
 3. 音乐资源来自第三方网站接口，作者不存储、不提供音源，接口稳定性不受保证，接口失效软件搜歌播放功能会失效
 4. 网站随时会升级验证、封禁接口，功能可能随时失效
-￼
+ 
 📁 文件清单
 plaintext
-￼
-￼
+ 
+ 
 .
-├─ main.py                 # 主程序源码
+├─ player_KTV.py                 # 主程序源码
 ├─ .uvr5_models/           # 存放UVR onnx伴奏模型（自己新建+放模型）
 ├─ .ktv_cache/             # 程序自动生成，缓存临时媒体、字幕
 └─ cookies.json            # 自动生成，保存网站验证cookie
